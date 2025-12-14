@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .step {
+            margin: 20px 0;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Node Dummy - Installation Instructions</h1>
+
+    <h2>Prerequisites</h2>
+    <div class="step">
+        <p>Make sure you have Node.js installed on your system.</p>
+        <ul>
+            <li>Download from: <a href="https://nodejs.org" target="_blank">https://nodejs.org</a></li>
+            <li>Recommended: LTS version (Long Term Support)</li>
+        </ul>
+    </div>
+
+    <h2>Installation Steps</h2>
+
+    <div class="step">
+        <h3>1. Extract the ZIP file</h3>
+        <p>Unzip the project folder to your desired location.</p>
+    </div>
+
+    <div class="step">
+        <h3>2. Open Terminal/Command Prompt</h3>
+        <p>Navigate to the project folder:</p>
+        <pre><code>cd path/to/Node Dummy</code></pre>
+    </div>
+
+    <div class="step">
+        <h3>3. Install Dependencies</h3>
+        <p>Run the following command to install all required packages:</p>
+        <pre><code>npm install</code></pre>
+        <p>This will install:</p>
+        <ul>
+            <li>express</li>
+            <li>body-parser</li>
+            <li>jsonwebtoken</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>4. Start the Server</h3>
+        <p>Run the server using:</p>
+        <pre><code>npm start</code></pre>
+        <p>The server will start on <code>http://localhost:3000</code></p>
+    </div>
+
+    <h2>Available API Endpoints</h2>
+    <div class="step">
+        <ul>
+            <li><strong>POST</strong> <code>/login</code> - Get a random username and JWT token</li>
+            <li><strong>POST</strong> <code>/register</code> - Mock registration</li>
+            <li><strong>GET</strong> <code>/profile</code> - Get user profile (requires JWT)</li>
+            <li><strong>POST</strong> <code>/logout</code> - Logout endpoint</li>
+        </ul>
+        <p>For detailed API documentation, see <a href="api-documentation.html">api-documentation.html</a></p>
+    </div>
+
+    <h2>Troubleshooting</h2>
+    <div class="step">
+        <ul>
+            <li><strong>Port already in use:</strong> If port 3000 is busy, stop other applications or modify the PORT value in <code>server.js</code></li>
+            <li><strong>npm not found:</strong> Make sure Node.js is properly installed and added to your system PATH</li>
+            <li><strong>Permission errors:</strong> Try running your terminal as administrator (Windows) or use <code>sudo</code> (Mac/Linux)</li>
+        </ul>
+    </div>
+
+</body>
+</html>
