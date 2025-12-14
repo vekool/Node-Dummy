@@ -9,6 +9,18 @@ const SECRET_KEY = 'your-secret-key-change-in-production';
 // Middleware
 app.use(bodyParser.json());
 
+/**
+ * @route GET /
+ * @description Serve the API documentation HTML page (default route)
+ * @access Public
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @returns {HTML} API documentation page
+ */
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/api-documentation.html');
+});
+
 // Pool of 10 names for mock login
 const namePool = [
   'Alice Johnson',
@@ -166,12 +178,28 @@ app.post('/logout', (req, res) => {
   });
 });
 
+/**
+ * @route GET /api-documentation
+ * @description Serve the API documentation HTML page
+ * @access Public
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @returns {HTML} API documentation page
+ * @example
+ * // Access via browser: http://localhost:3000/api-documentation
+ */
+app.get('/api-documentation', (req, res) => {
+  res.sendFile(__dirname + '/api-documentation.html');
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   console.log('\nAvailable routes:');
+  console.log('  GET  /         - API documentation (default)');
   console.log('  POST /login    - Get a random username and JWT token');
   console.log('  POST /register - Mock registration');
   console.log('  GET  /profile  - Get user profile (requires JWT)');
   console.log('  POST /logout   - Logout endpoint');
+  console.log('  GET  /api-documentation - View API documentation');
 });
